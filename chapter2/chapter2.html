@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>chapter 2</title>
+	<link type="text/css" rel="stylesheet" href="chapter2.css">
+</head>
+
+<body>
+<header>
+	<h1>Chapter 2 基本概念</h1>
+</header>
+
+<article>
+<h2>语法</h2>
+	<p>
+		注释同C++和Java<br>
+		在函数的第一行写<code>&quot;use strict&quot;;</code>告诉支持的JavaScript引擎切换到严格模式<br>
+		每个语句最有要加<code>;</code>（同C++和Java）
+	</p>
+</article>
+<article>
+<h2>变量</h2>
+	<h3>var</h3>
+	<p>
+		所有变量均由var来申明，具体类型由最后的赋值类型确定<br>
+		初始化变量不会将var标记为初始化类型，但不建议修改变量类型赋值<br>
+		<strong>在函数内声明变量不用var可以声明一个全局变量</strong>
+	</p>
+	<p>
+		可以用typeof运算符获得变量的类型<br>
+		null是Object类型，Undefined类型只有一个值
+	</p>
+	<h3>整型</h3>
+	<p>
+		整形变量十进制直接赋值，八进制在数字前加上0，十六进制加上0x<br>
+		进行计算时，所有数值最终都将转化成十进制<br>
+		<strong>尽量不要测试特定的浮点数值</strong><br>
+		正无穷<code>Infinity</code>，负无穷<code>-Infinity</code>，可用isFinite(数)判断是否为无穷<br>
+		NaN：Not a Number。用于表示一个本来要返回数值的操作数却未返回数值的情况（异常抛出）<br>
+		string类型的数字可以转化为整型，所有isNaN()返回的值为false<br>
+		将其他类型的非数值转化为数值的函数Number()、parseInt()、parseFloat()，前一个适用于所有，后两个适用于字符串<br>
+		null对应0，undefined对应NaN，如果是对象则调用valueOf()
+	</p>
+	<h3>字符串</h3>
+	<p>
+		String.length中转义序列算一个字符
+	</p>
+	<h3>Object</h3>
+	<p>
+		<code>var object=new Object();</code><br>
+		<code>bool hasOwnProperty(String propertyName)</code>御用检查给定属性是否存在于对象实例中<br>
+		<code>bool isPrototypeOf(Object object)</code>判断传入对象是否是另一个对象的原型<br>
+		<code>bool propertyIsEnumerable(String)</code>判断传入属性是否可用于for-in语句
+	</p>
+</article>
+<article>
+<h2>操作符</h2>
+	<h3>一元操作符</h3>
+	<p>
+		同C<br>
+		自增自减，相反数，加减，按位非（~），按位与（&），按位或（|），按位异或（^），左移?位（<<?），右移（>>），无符号右移（>>>）
+	</p>
+	<h3>布尔操作符</h3>
+	<p>
+		非（!），与（&&），或（||）
+	</p>
+	<p>
+		乘除求模加减，大小与等于，相等不相等，全等（===）还会判断类型
+	</p>
+	<h3>条件操作</h3>
+	<p>
+		<code>var max=(num1>num2)?num1:num2;</code>
+	</p>
+</article>
+<article>
+<h2>语句</h2>
+	<p>
+		if-else，do-while，while，for，for-in
+	</p>
+	<h3>label语句</h3>
+	<p>类似于goto的标记</p>
+	<p>
+		break-continue<br>
+		可以<code>break/continue label;</code>
+	</p>
+	<h3>with语句</h3>
+	<p>
+		将代码作用域设置到一个特定对象中<br>
+		<code>with(expression) statement;</code><br>
+		statement中的变量如果找不到，就会到expression中去找
+	</p>
+	<p>
+		swtich-case<br>
+		switch可以为任意变量，case可以为任意变量，甚至可以是条件判断
+	</p>
+	<h3>函数</h3>
+	<p>
+		<code>function functionName(args...){statements;}</code><br>
+		args不需要声明类型<br>
+		<code>alert(var)</code>输出变量
+	</p>
+	<p>
+		函数的参数列表数量不重要，可以通过arguments[i]来使用第i个参数<br>
+		<strong>参数传递都是值，不可能传引用<br>
+		没有函数重载，后一个函数会覆盖前一个函数</strong>
+	</p>
+</article>
+<footer>
+	<p>
+		mky 2019/8/19 21：38
+	</p>
+</footer>
+</body>
+
+</html>
