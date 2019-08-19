@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>chapter 1</title>
+	<link type="text/css" rel="stylesheet" href="chapter1.css">
+</head>
+
+<body>
+
+<header>
+	<h1>Chapter 1 在HTML中使用JavaScript</h1>
+</header>
+
+<article>
+<h2>&lt;script&gt;元素</h2>
+	<h3>6个属性</h3>
+		<p>
+			async：可选。表示应该立即下载脚本，但不应妨碍页面中其他操作。只对外部脚本文件有效<br>
+			charset：可选。表示通过src属性指定的代码的字符集。很少使用<br>
+			defer：可选。表示脚本可以延迟到文档完全被解析和显示后再执行<br>
+			language：废弃。<br>
+			src：可选。表示包含要执行代码的外部文件<br>
+			type：可选。language的替代属性，表示编写代码使用的脚本语言的内容类型，一般为<code>text/javasript</code>
+		</p>
+		<p>
+			延迟脚本：在script元素中加上<code>defer=&quot;defer&quot;</code><br>
+			异步脚本：async bool属性
+		</p>
+	<h3>嵌入JavaScript代码</h3>
+	<p>
+		直接嵌入<br>
+		<code>&lt;script type=&quot;text/javascript&quot;&gt;<br>
+		function sayHi(){<br>
+		alert("Hi");<br>
+		}<br>
+		&lt;/script&gt;</code><br>
+		如果代码中包含<code>&lt;/script&gt;</code>，使用<code>&lt;\/script&gt;</code>替代
+	</p>
+	<p>
+		引用外部js文件<br>
+		<code>script type=&quot;text/javascript&quot; src=&quot;文件名.js&quot;&gt;&lt;/script&gt;</code><br>
+		带有src属性的script元素不应该在标签之间再加JavaScript代码
+	</p>
+	<p>
+		<strong>所有script元素都放在head元素中，css文件引用后</strong><br>
+		在XHTML中，&lt;会被当做新的标签，为保证代码可读性<br>
+		<code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;![CDATA[<br>
+		代码<br>
+		]]&gt;&lt;/script&gt;</code><br>
+		若不兼容CData，则将该部分注释掉不加CDATA
+	</p>
+	<p>
+		若浏览器不支持JavaScript，可在body中增加noscript元素区域显示不支持JavaScript时显示的内容
+	</p>
+</article>
+
+</body>
+
+</html>
