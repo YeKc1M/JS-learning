@@ -13,6 +13,21 @@ header>h1{
 text-align: center;
 }
 
+nav{
+    margin:3%;
+}
+nav ul{
+    list-style-type: none;
+    background-color: mistyrose;
+}
+nav ul li{
+    display: inline;
+    padding: 0 1px 0 1px;
+}
+nav ul li #selected{
+    background-color: gray;
+}
+
 article{
 margin: 3%;
 }
