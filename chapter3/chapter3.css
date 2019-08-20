@@ -1,0 +1,53 @@
+body{
+    margin-left: 23%;
+    margin-right: 23%;
+    border: 2px black dotted;
+    }
+    
+    header{
+    margin: 3%;
+    border-bottom: 1px black solid;
+    }
+    
+    header>h1{
+    text-align: center;
+    }
+    
+    nav{
+        margin:3%;
+    }
+    nav ul{
+        list-style-type: none;
+        background-color: mistyrose;
+    }
+    nav ul li{
+        display: inline;
+        padding: 0 1px 0 1px;
+    }
+    nav ul li #selected{
+        background-color: gray;
+    }
+    
+    article{
+    margin: 3%;
+    }
+    article>h2{
+    text-decoration: underline;
+    }
+    
+    article{
+    background-color:mistyrose;
+    }
+    
+    code{
+    color:blue;
+    }
+    
+    strong{
+    color:red;
+    }
+    footer{
+    border: 1px solid black;
+    text-align:center;
+    margin: 0px 2px 2px 2px;
+    }

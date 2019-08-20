@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="GB 2312">
+	<title>chapter 3</title>
+	<link type="text/css" rel="stylesheet" href="chapter3.css">
+</head>
+
+<body>
+    <header>
+        <h1>Chapter 3 变量作用域和内存</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../chapter1/chapter1.html" title="chapter1" target="_blank">chapter 1</a></li>
+            <li><a href="../chapter2/chapter2.html" title="chapter2" target="_blank">chapter 2</a></li>
+            <li><a id="selected" href="chapter3.html" title="chapter3">chapter 3</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>基本类型和引用类型的值</h2>
+        <p>
+            在一个变量为对象时，和Java一样，该变量是指向对象的引用<br>
+            函数传参和Java一样
+        </p>
+        <p>
+            <code>alert(colors instanceof Array)</code>变量colors是Array类型对象吗
+        </p>
+    </article>
+    <article>
+        <h2>执行环境及作用域</h2>
+        <p>
+            可以在函数中增加函数，该子函数可以调用外部的所有函数和变量（同Java内部类）
+        </p>
+        <p>
+            延长作用域链<br>
+            try-catch创建一个新的对象,with将指定对象添加到作用域
+        </p>
+        <p>
+            没有块级作用域<br>
+            <strong>函数内声明的变量函数外无法使用，其他块（if，for）声明的变量块外可以使用</strong><br>
+            优先使用子环境中对应的变量
+        </p>
+    </article>
+    <article>
+        <h2>垃圾收集</h2>
+        <p>
+            JavaScript有GC
+        </p>
+    </article>
+</body>
+
+</html>
