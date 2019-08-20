@@ -14,12 +14,12 @@ header>h1{
 }
     
 nav{
-    margin:3%;
+        margin:3%;
 }
 nav ul{
     list-style-type: none;
     background-color: mistyrose;
-    }
+}
 nav ul li{
     display: inline;
     padding: 0 1px 0 1px;

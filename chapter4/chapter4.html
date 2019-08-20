@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="GB 2312">
+        <title>Chapter 4</title>
+        <link type="text/css" rel="stylesheet" href="chapter4.css">
+    </head>
+    <body>
+        <header>
+            <h1>Chapter 4 引用类型</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../chapter1/chapter1.html" title="chapter1" target="_blank">chapter 1</a></li>
+                <li><a href="../chapter2/chapter2.html" title="chapter2" target="_blank">chapter 2</a></li>
+                <li><a href="../chapter3/chapter3.html" title="chapter3" target="_blank">chapter 3</a></li>
+                <li><a id="selected" href="chapter4.html" title="chapter4">chapter 4</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h2>Object对象</h2>
+            <p>
+                <code>var person=new Object();<br>person.name=&quot;name&quot;;<br>person.age=29;</code><br>等同于<br>
+                <code>var person={name:&quot;name&quot;,age:29};</code>键值对（属性名可以为字符串）
+            </p>
+            <p>
+                <code>person.name</code>等同于<br>
+                <code>person["name"]</code>
+            </p>
+        </article>
+        <article>
+            <h2>Array对象</h2>
+            <p>
+                <code>new Array();new Array(arrSize);new Array(所有数据);[所有数据];</code><br>
+                数组是动态的，若访问超过数组大小，则会增加数组大小<br>
+                减小数组大小，后面的数据都会变成Undefined
+            </p>
+            <p>
+                检测数组<br>
+                <code>if(variable instanceof Array){...}<br>
+                if(Array.isArray(variable)){...}</code>
+            </p>
+            <p>
+                转换方法<br>
+                数组的<code>.toString()</code>返回一个字符串，用逗号连接所有元素<br>
+                <code>.valueOf()</code>返回一个数组<br>
+                <code>.toLocaleString()</code>调用每一项的<code>.toLocaleString()</code>
+            </p>
+            <p>
+                Array对象支持栈的<code>.push()</code>和<code>.pop()</code>（返回最后的元素）<br>
+                队列是<code>.push()</code>和<code>.shift()</code>，<code>.unshift()</code>用于在最前方加元素<br>
+                排序用<code>.sort()</code>直接改变该数组（无返回），<code>.reverse()</code><br>
+                <code>.sort()</code>可接受一个比较函数作为排序标准，参数1小于参数2返回-1，参数1大于参数2返回1，等于返回0
+            </p>
+            <p>
+                <code>concat(arrays)</code>可基于所有参数创建一个数组<br>
+                <code>.slice(num1,num2=.length-1)</code>会创建一个下标在num1和num2（不包括）之间的新数组<br>
+                <code>.splice(startIndex,num)</code>删除num个元素<br>
+                <code>.splice(startIndex,0,args...)</code>添加若干个元素<br>
+                <code>.splice(startIndex,1,args...)</code>替换元素<br>
+                <code>.splice()</code>会返回结果数组
+            </p>
+        </article>
+    </body>
+</html>
