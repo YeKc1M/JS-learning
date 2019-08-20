@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="GB 2313">
+        <title>Chapter 5</title>
+        <link type="text/css" rel="stylesheet" href="chapter5.css">
+    </head>
+    <body>
+        <header>
+            <h1>Chapter 5 面向对象编程</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../chapter1/chapter1.html" title="chapter1" target="_blank">chapter 1</a></li>
+                <li><a href="../chapter2/chapter2.html" title="chapter2" target="_blank">chapter 2</a></li>
+                <li><a href="../chapter3/chapter3.html" title="chapter3" target="_blank">chapter 3</a></li>
+                <li><a href="../chapter4/chapter4.html" title="chapter4" target="_blank">chapter 4</a></li>
+                <li><a id="selected" href="chapter5.html" title="chapter5">chapter 5</a></li>
+            </ul>
+        </nav>
+        <div id="fixedSideBar">
+            <ul>
+                <li><a href="chapter5.html#attr">理解对象</a><br>数据属性<br>访问器属性<br>设置多个属性</li>
+                <li><a href="chapter5.html#constructor">创建对象</a><br>工厂<br>构造函数<br>原型模型<br><em>组合构造与原型</em><br>
+                <em>动态原型模型</em></li>
+                <li><a href="chapter5.html#inherit">继承</a><br>原型链<br><em>借用构造函数</em></li>
+            </ul>
+        </div>
+        <article id="attr">
+            <h2>理解对象</h2>
+            <p>
+                数据属性<br>
+                Configurable：表示能否通过delete删除属性从而重新定义属性<br>
+                Enumerable：表示是否支持枚举<br>
+                Writable：表示能否修改<br>
+                Value：默认为Undefined<br>
+                其他所有属性默认都为true<br>
+                <code>
+                    Object.defineProperty(person, &quot;name&quot;,{configurable:true,value:"value"});
+                </code>
+            </p>
+            <p>
+                访问器属性<br>
+                configurable/enumerable<br>
+                get:读取属性调用的函数<br>
+                set:写入属性调用的函数<br>
+                <code>Object.defineProperty(book,&quot;year&quot;,{get:function(){...},set:function(){...}});</code><br>
+                <em>对象中的属性前面有_，表示只能通过对象方法访问该属性</em>
+            </p>
+            <p>
+                定义多个属性<br>
+                <code>Object.defineProperties(book,{_year{value:2004},edition{value:1},year{get:function(){...},set:function(){...}}});</code>
+            </p>
+            <p>
+                读取对象属性<code>Object.getOwnPropertyDescriptor()</code>返回一个包含各种属性的对象
+            </p>
+        </article>
+        <article id="constructor">
+            <h2>创建对象</h2>
+            <p>
+                工厂模式,构造函数<br>
+                原型模型 P166<br>
+                <code>object.hasOwnProperty(&quot;属性&quot;)</code>如果该对象有返回true，只要原型有返回false<br>
+                <code>&quot;name&quot; in person1</code>如果person1及其原型中能访问到name属性，返回true<br>
+                <code>Object.keys()</code>返回对象中所有可枚举的属性的字符串数组<br>
+                <code>Object.getOwnPropertyNames</code>得到所有属性
+            </p>
+            <p>
+                更简单的原型模型<br>
+                <code>function Person(){}<br>
+                Person.prototype={name:&quot;Nicolas&quot;,age:29,job:&quot;Software Engineer&quot;,sayName:funtion(){alert(this.name);};</code><br>
+                <code>person.constructor</code>将不再指向Person而是Object<br>
+                在后面加上<code>Object.defineProperty(Person.prototype,"constructor",{enumerable:false,value:Person});</code>可解决
+            </p>
+            <h3><strong>组合使用构造函数和原型模型</strong></h3>
+            <p>
+                <code>function Person(name,age,job){...}<br>
+                Person.prototype={constructor:Person,sayName:function(){...}};</code>
+            </p>
+            <h3>动态原型模型</h3>
+            <p>
+                <code>function Person(name,age,job){...<br>
+                if(typeof this.sayName!="function"){Person.prototype.sayName=funtion(){...};};}</code><br>
+                sayName只会在第一次创建对象时创建
+            </p>
+            <p>
+                寄生构造函数P179，稳妥构造函数P180
+            </p>
+        </article>
+        <article id="inherit">
+            <h2>继承</h2>
+            <h3>原型链</h3>
+            <p>
+                增长搜索链<br>
+                使子类的prototype指向父类的实例，instanceof 子类对象.constructor为父类<br>
+                注意引用对象会共享
+            </p>
+            <h3>借用构造函数</h3>
+            <p>
+                <code>function SuperType(args){...}<br>
+                function SubType(){SuperType.call(this,args);...}</code>
+            </p>
+        </article>
+    </body>
+</html>

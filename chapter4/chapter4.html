@@ -17,7 +17,18 @@
                 <li><a id="selected" href="chapter4.html" title="chapter4">chapter 4</a></li>
             </ul>
         </nav>
-        <article>
+        <div id="fixedSideBar">
+            <ul>
+                <li><a href="chapter4.html#Object">Object</a><br>构造函数<br>访问属性</li>
+                <li><a href="chapter4.html#array">Array</a><br>构造<br>检测类型<br>基本函数<br><a href="chapter4.html#array_itr">迭代</a></li>
+                <li><a href="chapter4.html#date">Date</a></li>
+                <li><a href="chapter4.html#RegExp">正则表达式</a></li>
+                <li><a href="chapter4.html#func">Function</a><br>函数指针<br>callee/caller/call/apply...</li>
+                <li>基本包装类型</li>
+                <li>单体内置对象</li>
+            </ul>
+        </div>
+        <article id="Object">
             <h2>Object对象</h2>
             <p>
                 <code>var person=new Object();<br>person.name=&quot;name&quot;;<br>person.age=29;</code><br>等同于<br>
@@ -28,7 +39,7 @@
                 <code>person["name"]</code>
             </p>
         </article>
-        <article>
+        <article id="array">
             <h2>Array对象</h2>
             <p>
                 <code>new Array();new Array(arrSize);new Array(所有数据);[所有数据];</code><br>
@@ -63,7 +74,7 @@
             <p>
                 <code>.indexOf(element)</code>返回和element相等的下标，<code>.lastIndexOf()</code>从后往前找
             </p>
-            <h3>迭代方法</h3>
+            <h3 id="array_itr">迭代方法</h3>
             <p>
                 <code>.every(func(item,index,array))</code>对数组中每一项运行给定函数，如果函数每一项返回true，则返回值为true<br>
                 <code>.filter(func)</code>对数组的每一项运行给定函数，返回返回值为true的元素组成的数组<br>
@@ -76,7 +87,7 @@
                 <code>.reduce(func(prev,cur,index,array))</code>和<code>.reduceRight()</code>（从后）迭代数组所有项，返回的值会作为第一个参数
             </p>
         </article>
-        <article>
+        <article id="date">
             <h2>Date类型</h2>
             <p>
                 <code>new Date();</code>当前日期时间<br>
@@ -84,7 +95,7 @@
                 <cdoe>new Date(Date.UTC(args...))</cdoe>参数为年，基于0的月，天，时，分，秒，毫秒
             </p>
         </article>
-        <article>
+        <article id="RegExp">
             <h2>RegExp正则表达式</h2>
             <p>
                 <code>var expression=/pattern/flag</code><br>
@@ -94,7 +105,7 @@
                 具体见Page 124
             </p>
         </article>
-        <article>
+        <article id="func">
             <h2>Function类型</h2>
             <p>
                 <code>function fname(args...){statements...}</code><br>

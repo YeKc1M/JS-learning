@@ -11,6 +11,15 @@
 	<h1>Chapter 2 基本概念</h1>
 </header>
 
+<div id="fixedSideBar">
+	<ul>
+		<li><a href="chapter2.html#variable">变量</a><br>Object属性</li>
+		<li><a href="chapter2.html#operator">操作数</a></li>
+		<li><a href="chapter2.html#lang">语句</a><br>常规语句<br><a href="chapter2.html#lang_label">label</a><br>
+		<a href="chapter2.html#lang_with">with</a><br><a href="chapter2.html#lang_func">function</a></li>
+	</ul>
+</div>
+
 <nav>
 	<ul>
 		<li><a href="../chapter1/chapter1.html" title="chapter1" target="_blank">chapter 1</a></li>
@@ -28,7 +37,7 @@
 		每个语句最有要加<code>;</code>（同C++和Java）
 	</p>
 </article>
-<article>
+<article id="variable">
 <h2>变量</h2>
 	<h3>var</h3>
 	<p>
@@ -63,7 +72,7 @@
 		<code>bool propertyIsEnumerable(String)</code>判断传入属性是否可用于for-in语句
 	</p>
 </article>
-<article>
+<article id="operator">
 <h2>操作符</h2>
 	<h3>一元操作符</h3>
 	<p>
@@ -82,18 +91,18 @@
 		<code>var max=(num1>num2)?num1:num2;</code>
 	</p>
 </article>
-<article>
+<article id="lang">
 <h2>语句</h2>
 	<p>
 		if-else，do-while，while，for，for-in
 	</p>
-	<h3>label语句</h3>
+	<h3 id="lang_label">label语句</h3>
 	<p>类似于goto的标记</p>
 	<p>
 		break-continue<br>
 		可以<code>break/continue label;</code>
 	</p>
-	<h3>with语句</h3>
+	<h3 id="lang_with">with语句</h3>
 	<p>
 		将代码作用域设置到一个特定对象中<br>
 		<code>with(expression) statement;</code><br>
@@ -103,7 +112,7 @@
 		swtich-case<br>
 		switch可以为任意变量，case可以为任意变量，甚至可以是条件判断
 	</p>
-	<h3>函数</h3>
+	<h3 id="lang_func">函数</h3>
 	<p>
 		<code>function functionName(args...){statements;}</code><br>
 		args不需要声明类型<br>

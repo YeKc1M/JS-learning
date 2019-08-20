@@ -29,9 +29,9 @@ nav ul li #selected{
 }
 
 #fixedSideBar{
-    left:0px;
     position: fixed;
-    top:80px;
+    left:0px;
+    top:8px;
     border:1px dotted black;
     width:20%;
 }
