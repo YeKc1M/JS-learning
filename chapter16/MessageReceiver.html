@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test receive</title>
+        <script>
+            function test(){
+                window.open("MessagePoster.html");
+                window.addEventListener("message",function(e){
+                    alert(e.data);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <p id="msg"></p>
+        <button onclick="test()">post</button>
+    </body>
+</html>
